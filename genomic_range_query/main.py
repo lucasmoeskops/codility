@@ -56,6 +56,9 @@ publication or disclosure prohibited.
 """
 
 
+__author__ = 'Lucas Moeskops'
+
+
 def solution(S, P, Q):
     distances = {'A': -1, 'C': -1, 'G': -1, 'T': -1}
     distance_lookup = []

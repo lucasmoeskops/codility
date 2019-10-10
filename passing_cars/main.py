@@ -47,6 +47,9 @@ publication or disclosure prohibited.
 """
 
 
+__author__ = 'Lucas Moeskops'
+
+
 def solution(A):
     cars, passings, limit = 0, 0, int(1e9)
 
