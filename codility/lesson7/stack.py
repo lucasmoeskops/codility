@@ -13,3 +13,6 @@ class Stack:
     def pop(self):
         self.size -= 1
         return self.stack[self.size]
+
+    def top(self):
+        return self.stack[self.size - 1]
