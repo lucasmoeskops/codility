@@ -76,4 +76,3 @@ def solution(A):
         maximum = max(current, maximum)
 
     return maximum
-
