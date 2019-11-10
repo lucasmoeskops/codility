@@ -24,6 +24,8 @@ publication or disclosure prohibited.
 
 from math import ceil, sqrt
 
+__author__ = 'Lucas Moeskops'
+
 
 def solution(N):
     is_sqrt = int(sqrt(N)) ** 2 == N
