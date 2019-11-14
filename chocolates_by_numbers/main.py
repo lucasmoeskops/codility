@@ -35,12 +35,11 @@ N and M are integers within the range [1..1,000,000,000].
 Copyright 2009–2019 by Codility Limited. All Rights Reserved. Unauthorized copying,
 publication or disclosure prohibited.
 """
-
-from codility.lesson12.lcm import lcm
+from math import gcd
 
 __author__ = 'Lucas Moeskops'
 
 
 def solution(N, M):
     # Get fits in common_multiple
-    return lcm(N, M) // M
+    return N // gcd(N, M)
