@@ -15,3 +15,18 @@ def fibonnaci(i, fibonacci_store=None, max_size=None):
 
 def get_fibonnaci_store():
     return [1, 1]
+
+
+def fibonacci_gen(max_size=None):
+    a = 1
+    b = 1
+
+    while True:
+        yield a
+        yield b
+        a = a + b
+        b = b + a
+
+        if max_size:
+            a %= max_size
+            b %= max_size

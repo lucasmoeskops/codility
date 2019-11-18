@@ -58,13 +58,16 @@ Write an efficient algorithm for the following assumptions:
 Copyright 2009–2019 by Codility Limited. All Rights Reserved. Unauthorized copying,
 publication or disclosure prohibited.
 """
-from codility.lesson13.fibonacci import get_fibonnaci_store, fibonnaci
+
+from itertools import islice
+
+from codility.lesson13.fibonacci import fibonacci_gen
 
 __author__ = 'Lucas Moeskops'
 
 
 def solution(A, B):
-    fibonacci_store = get_fibonnaci_store()
     max_size = 1 << max(B)
+    fibonacci = tuple(islice(fibonacci_gen(max_size), max(A) + 1))
 
-    return [fibonnaci(v, fibonacci_store, max_size) % (1 << m) for (v, m) in zip(A, B)]
+    return [fibonacci[v] % (1 << m) for v, m in zip(A, B)]
