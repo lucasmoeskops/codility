@@ -77,7 +77,7 @@ __author__ = 'Lucas Moeskops'
 def solution(A):
     positions = len(A) + 1
     fibonacci = tuple(takewhile(lambda i: i <= positions, fibonacci_gen()))
-    stack = Stack(len(fibonacci))
+    stack = Stack(len(positions))
     best = [0] * positions
 
     for n in fibonacci:
@@ -89,7 +89,7 @@ def solution(A):
             best[n] = 1
 
     while stack:
-        new_stack = Stack(len(fibonacci))
+        new_stack = Stack(len(positions))
 
         while stack:
             total, jumps = stack.pop()
