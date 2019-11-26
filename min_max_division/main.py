@@ -56,27 +56,21 @@ publication or disclosure prohibited.
 """
 
 from bisect import bisect_left
+from functools import partial
 from math import ceil
+
+from codility.lesson14.binarysearch import BinarySearch
 
 __author__ = 'Lucas Moeskops'
 
 
 def solution(K, M, A):
     return bisect_left(
-        LazyEvaluator(K, A),
+        BinarySearch(partial(check, A, K)),
         True,
         lo=max(A),
         hi=ceil(len(A) / K) * M,
     )
-
-
-class LazyEvaluator:
-    def __init__(self, K, A):
-        self.A = A
-        self.K = K
-
-    def __getitem__(self, large_sum):
-        return check(self.A, self.K, large_sum)
 
 
 def check(A, K, large_sum):
